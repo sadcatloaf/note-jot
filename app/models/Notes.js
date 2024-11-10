@@ -16,7 +16,7 @@ export class Notes {
     get NotesList() {
         return `
           <section class="row note-Decoration text-light m-3 rounded">
-            <div role="button" onsubmit="app.NotesController.selectActiveNotes('${this.id}')"
+            <div role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')"
               class="selectable mb-3 d-flex">
               <span class="fw-bold m-2">${this.title}</span><span class="m-2">${this.ShortReportedDate}</span>
             </div>
@@ -35,7 +35,7 @@ export class Notes {
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
             <hr>
-            <form ">
+            <form onsubmit="app.NotesController.saveActiveNotes">
               <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
               <button class="btn btn-success m-2">Save</button>
               <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i

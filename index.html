@@ -112,7 +112,7 @@
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
             <hr>
-            <form ">
+            <form onsubmit="app.NotesController.saveActiveNotes">
               <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
               <button class="btn btn-success m-2">Save</button>
               <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i

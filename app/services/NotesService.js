@@ -11,10 +11,11 @@ class NotesService {
     //     this.saveNotes()
     // }
     selectActiveNotes(notesId) {
-        console.log('service', notesId)
+        console.log('Hello my name is mel')
         const selectedNote = AppState.noteJots.find(jot => notesId == jot.id)
         console.log(selectedNote);
         AppState.activeNotes = selectedNote
+        console.log(AppState)
     }
     createNote(formData) {
         console.log('service', formData)
