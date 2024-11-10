@@ -9,6 +9,7 @@ export class NotesController {
         AppState.on('noteJots', () => console.log('Notes changed'))
         // AppState.on('activeNotes', this.drawActiveNotes)
         // AppState.on('noteJots', this.drawActiveNotes)
+        AppState.on('noteJots', this.drawNotesList)
         // notesService.loadNotes()
     }
 

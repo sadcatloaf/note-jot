@@ -17,6 +17,7 @@ class NotesService {
     //     AppState.activeNotes = selectedNote
     // }
     createNote(formData) {
+        console.log('service', formData)
         AppState.noteJots.push(new Notes(formData))
         console.log(AppState.noteJots);
         // this.saveNotes()
