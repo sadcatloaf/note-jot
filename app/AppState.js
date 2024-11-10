@@ -6,7 +6,7 @@ class ObservableAppState extends EventEmitter {
 
   noteJots = [
     new Notes({
-      name: 'Remember',
+      title: 'Remember',
       color: 'pink',
       description: 'Make sure you always check to see if things work on console and not to forget to draw to page',
       createdDate: '11/8/2024'

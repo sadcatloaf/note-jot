@@ -34,29 +34,29 @@ export class NotesController {
         console.log('creating notes')
         event.preventDefault()
         const formElm = event.target
-        // const formData = {
-        //     // @ts-ignore
-        //     title: formElm.title.value,
-        //     // @ts-ignore
-        //     createdDate: formElm.createdDate.value
-        // }
-        // console.log(formElm);
-        // notesService.createNote(formElm)
+        const formData = {
+            // @ts-ignore
+            Title: formElm.Title.value,
+            // @ts-ignore
+            color: formElm.color.value
+        }
+        console.log(formData);
+        notesService.createNote(formData)
     }
-
-    // selectActiveNotes(notesId) {
-    //     console.log('📒📒', notesId)
-    //     notesService.selectActiveNotes(notesId)
-    // }
-
-    // saveActiveNotes() {
-    //     event.preventDefault()
-    //     console.log('💾📔', AppState.activeNotes);
-    //     const formElm = event.target
-    //     // @ts-ignore
-    //     let newText = formElm.description.value
-    //     console.log(newText);
-    //     notesService.saveActiveNotes()
-    // }
-
 }
+
+// selectActiveNotes(notesId) {
+//     console.log('📒📒', notesId)
+//     notesService.selectActiveNotes(notesId)
+// }
+
+// saveActiveNotes() {
+//     event.preventDefault()
+//     console.log('💾📔', AppState.activeNotes);
+//     const formElm = event.target
+//     // @ts-ignore
+//     let newText = formElm.description.value
+//     console.log(newText);
+//     notesService.saveActiveNotes()
+// }
+

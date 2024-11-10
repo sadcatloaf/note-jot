@@ -5,7 +5,7 @@ export class Notes {
     constructor(data) {
 
         this.id = generateId()
-        this.name = data.name
+        this.title = data.title
         this.description = data.description
         this.updatedAt = data.updatedAt == undefined ? new Date() : new data(data.updatedAt)
         this.createdDate = data.createdDate == undefined ? new Date() : new Date(data.createdDate)
@@ -18,7 +18,7 @@ export class Notes {
           <section class="row note-Decoration text-light m-3 rounded">
             <div role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')"
               class="selectable mb-3 d-flex">
-              <span class="fw-bold m-2">${this.name}</span><span class="m-2">${this.ShortReportedDate}</span>
+              <span class="fw-bold m-2">${this.title}</span><span class="m-2">${this.ShortReportedDate}</span>
             </div>
             <span class="m-2">${this.description}</span>
           </section>
@@ -30,7 +30,7 @@ export class Notes {
     get ActiveNotes() {
         return `
     <div class="m-3">
-              <h2>${this.name}</h2>
+              <h2>${this.title}</h2>
               <p>${this.ShortReportedDate}</p>
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
