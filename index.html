@@ -10,9 +10,11 @@
     href="https://cdnjs.cloudflare.com/ajax/libs/MaterialDesign-Webfont/7.0.96/css/materialdesignicons.min.css"
     integrity="sha512-fXnjLwoVZ01NUqS/7G5kAnhXNXat6v7e3M9PhoMHOTARUMCaf5qNO84r5x9AFf5HDzm3rEZD8sb/n6dZ19SzFA=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="assets/style/main.css">
   <link rel="stylesheet" href="assets/style/style.css">
-  <title>note-jot</title>
+  <title>Note-Jot</title>
 </head>
 
 <body>
@@ -22,7 +24,7 @@
       <a class="navbar-brand" href="#">
         <img src="https://codeworks.blob.core.windows.net/public/assets/img/cw-mark.png" height="45" alt=""
           loading="lazy">
-        <span class="ml-2">note-jot</span>
+        <span class="ml-2">Note-Jot</span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
         aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,9 +40,93 @@
     </nav>
   </header>
 
+
+
+
+
+
   <!-- SECTION -->
   <main>
-      <!-- <section id="router-view"></section> -->
+    <div class="container-fluid">
+      <div class="row m-4">
+        <div class="col-md-4">
+          <section class="row">
+            <div class="col-10">
+              <h3>Note Jot</h2>
+            </div>
+            <h2 class="d-flex col">
+              <span id="Notes-Count" class="fw-bold">0</span>
+            </h2>
+            <hr>
+
+          </section>
+
+          <!-- SECTION For Creation -->
+          <section class="form-floating shadow bg-dark rounded">
+            <form onsubmit="app.NotesController.createNotes()" class="row justify-content-center">
+              <div class="col-1 m-3 p-1">
+                <input required id="color" name="color" type="color" class="from-control">
+              </div>
+              <div class="col-3 m-3 p-1">
+                <textarea rows="1" class="from-control" name="Title" id="Note-Title" required>Title</textarea>
+              </div>
+              <div class="col-3 m-3">
+
+                <button class="btn btn-primary" type="submit" title="Create Note">Create +</button>
+              </div>
+            </form>
+          </section>
+
+          <!-- SECTION List of Notes -->
+          <!-- <div class="col rounded shadow p-2 m-3 bg-dark text-light">
+            <h3>Title</h2>
+              <p>11/8/2024</p>
+              <hr>
+              <p class="note-Decoration">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi reprehenderit
+                praesentium fugit
+                facilis
+                exercitationem incidunt! Soluta corporis sint necessitatibus amet reprehenderit quae nobis
+                doloremque
+                repellendus mollitia! Possimus ullam quia totam.</p>
+          </div> -->
+
+          <section id="Notes-List">
+            <!-- <section class="row note-Decoration text-light m-3 rounded">
+              <div role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')"
+                class="selectable mb-3 d-flex">
+                <span class="fw-bold m-2">${this.name}</span><span class="m-2">${this.ShortReportedDate}</span>
+              </div>
+              <span class="m-2">${this.description}</span>
+            </section> -->
+          </section>
+
+        </div>
+
+
+        <!-- SECTION get notes -->
+        <div class="col-8 bg-dark rounded shadow text-light ">
+          <section id="Active-Notes">
+            <!-- 
+            <div class="m-3">
+              <h2>${this.name}</h2>
+              <p>${this.ShortReportedDate}</p>
+              <p>Last Updated: ${this.FormattedUpdatedAt}</p>
+            </div>
+            <hr>
+            <form ">
+              <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
+              <button class="btn btn-success m-2">Save</button>
+              <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i
+                  class="mdi mdi-delete-empty"></i></button>
+            </form>
+        </div> -->
+
+          </section>
+        </div>
+
+      </div>
+
+
   </main>
 
   <!-- SECTION -->
