@@ -7,8 +7,8 @@ export class NotesController {
 
         this.drawNotesList()
         AppState.on('noteJots', () => console.log('Notes changed'))
-        // AppState.on('activeNotes', this.drawActiveNotes)
-        // AppState.on('noteJots', this.drawActiveNotes)
+        AppState.on('activeNotes', this.drawActiveNotes)
+        AppState.on('noteJots', this.drawActiveNotes)
         AppState.on('noteJots', this.drawNotesList)
         // notesService.loadNotes()
     }
@@ -23,12 +23,12 @@ export class NotesController {
         noteCountElm.innerHTML = AppState.noteJots.length.toString()
     }
 
-    // drawActiveNotes() {
-    //     console.log('📔📔')
-    //     const activeNotesElm = document.getElementById('Active-Notes')
-    //     activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
+    drawActiveNotes() {
+        console.log('📔📔')
+        // const activeNotesElm = document.getElementById('Active-Notes')
+        // activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
 
-    // }
+    }
 
 
     createNotes() {
@@ -39,17 +39,18 @@ export class NotesController {
             // @ts-ignore
             Title: formElm.Title.value,
             // @ts-ignore
-            color: formElm.color.value
+            color: formElm.color.value,
+
         }
         console.log(formData);
         notesService.createNote(formData)
     }
-}
 
-// selectActiveNotes(notesId) {
-//     console.log('📒📒', notesId)
-//     notesService.selectActiveNotes(notesId)
-// }
+    selectActiveNotes(notesId) {
+        console.log('📒📒', notesId)
+        notesService.selectActiveNotes(notesId)
+    }
+}
 
 // saveActiveNotes() {
 //     event.preventDefault()
