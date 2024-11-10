@@ -10,12 +10,12 @@ class NotesService {
     //     AppState.emit('activeNotes')
     //     this.saveNotes()
     // }
-    // selectActiveNotes(notesId) {
-    //     console.log('service', notesId)
-    //     const selectedNote = AppState.noteJots.find(jot => notesId == jot.id)
-    //     console.log(selectedNote);
-    //     AppState.activeNotes = selectedNote
-    // }
+    selectActiveNotes(notesId) {
+        console.log('service', notesId)
+        const selectedNote = AppState.noteJots.find(jot => notesId == jot.id)
+        console.log(selectedNote);
+        AppState.activeNotes = selectedNote
+    }
     createNote(formData) {
         console.log('service', formData)
         AppState.noteJots.push(new Notes(formData))

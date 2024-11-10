@@ -25,8 +25,8 @@ export class NotesController {
 
     drawActiveNotes() {
         console.log('📔📔')
-        // const activeNotesElm = document.getElementById('Active-Notes')
-        // activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
+        const activeNotesElm = document.getElementById('Active-Notes')
+        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
 
     }
 

@@ -16,7 +16,7 @@ export class Notes {
     get NotesList() {
         return `
           <section class="row note-Decoration text-light m-3 rounded">
-            <div role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')"
+            <div role="button" onsubmit="app.NotesController.selectActiveNotes('${this.id}')"
               class="selectable mb-3 d-flex">
               <span class="fw-bold m-2">${this.title}</span><span class="m-2">${this.ShortReportedDate}</span>
             </div>
