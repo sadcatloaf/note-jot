@@ -15,9 +15,8 @@ export class Notes {
 
     get NotesList() {
         return `
-          <section class="row note-Decoration text-light m-3 rounded">
-            <div role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')"
-              class="selectable mb-3 d-flex">
+          <section role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')" class="row note-Decoration text-light m-3 rounded">
+            <div class="selectable mb-3 d-flex">
               <span class="fw-bold m-2">${this.title}</span><span class="m-2">${this.ShortReportedDate}</span>
             </div>
             <span class="m-2">${this.description}</span>
@@ -27,7 +26,7 @@ export class Notes {
 
 
 
-    get ActiveNotes() {
+    get ActiveNotesTemplate() {
         return `
     <div class="m-3">
               <h2>${this.title}</h2>

@@ -91,8 +91,7 @@
 
           <section id="Notes-List">
             <!-- <section class="row note-Decoration text-light m-3 rounded">
-              <div role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')"
-                class="selectable mb-3 d-flex">
+              <div class="selectable mb-3 d-flex">
                 <span class="fw-bold m-2">${this.name}</span><span class="m-2">${this.ShortReportedDate}</span>
               </div>
               <span class="m-2">${this.description}</span>
@@ -112,7 +111,7 @@
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
             <hr>
-            <form onsubmit="app.NotesController.saveActiveNotes">
+            <form>
               <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
               <button class="btn btn-success m-2">Save</button>
               <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i

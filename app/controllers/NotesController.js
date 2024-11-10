@@ -7,7 +7,7 @@ export class NotesController {
 
         this.drawNotesList()
         AppState.on('noteJots', () => console.log('Notes changed'))
-        AppState.on('activeNotes', this.drawActiveNotes)
+        // AppState.on('activeNotes', this.drawActiveNotes)
         AppState.on('noteJots', this.drawActiveNotes)
         AppState.on('noteJots', this.drawNotesList)
         // notesService.loadNotes()
@@ -26,7 +26,7 @@ export class NotesController {
     drawActiveNotes() {
         console.log('📔📔')
         const activeNotesElm = document.getElementById('Active-Notes')
-        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
+        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotesTemplate
 
     }
 
@@ -46,10 +46,10 @@ export class NotesController {
         notesService.createNote(formData)
     }
 
-    selectActiveNotes(notesId) {
-        console.log('📒📒', notesId)
-        notesService.selectActiveNotes(notesId)
-    }
+    // selectActiveNotes(notesId) {
+    //     console.log('📒📒', notesId)
+    //     notesService.selectActiveNotes(notesId)
+    // }
 }
 
 // saveActiveNotes() {
