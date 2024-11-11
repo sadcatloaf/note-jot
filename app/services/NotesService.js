@@ -3,9 +3,7 @@ import { Notes } from "../models/Notes.js";
 import { loadState, saveState } from "../utils/Store.js";
 
 class NotesService {
-    deleteNoteListing(carId) {
-        throw new Error("Method not implemented.");
-    }
+
 
     saveActiveNotes() {
         const noteJots = AppState.activeNotes
@@ -37,13 +35,13 @@ class NotesService {
     }
 
 
-    deleteCarListing(notesId) {
+    deleteNoteListing(notesId) {
         console.log(notesId);
-        // const NotesDelete = AppState.noteJots.find(note => note.id == notesId)
-        // console.log(NotesDelete);
-        // const indexToRemove = AppState.noteJots.indexOf(NotesDelete)
-        // AppState.noteJots.splice(indexToRemove, 1)
-        // this.saveNote()
+        const NotesDelete = AppState.noteJots.find(note => note.id == notesId)
+        console.log(NotesDelete);
+        const indexToRemove = AppState.noteJots.indexOf(NotesDelete)
+        AppState.noteJots.splice(indexToRemove, 1)
+        this.saveNote()
     }
 
 }

@@ -57,20 +57,20 @@ export class NotesController {
         notesService.selectActiveNotes(notesId)
     }
 
-    // saveActiveNotes() {
-    //     event.preventDefault()
-    //     console.log('💾📔', AppState.activeNotes);
-    //     const formElm = event.target
-    // }
+    saveActiveNotes() {
+        event.preventDefault()
+        console.log('💾📔', AppState.activeNotes);
+        const formElm = event.target
+    }
 
     deleteNoteListing(notesId) {
         console.log('delete', notesId);
-        // const confirmed = confirm("Are you sure you want to delete this?")
-        // if (!confirmed) return
-        // const areYouSure = confirm("Are you Sure?")
-        // if (!areYouSure) return
-        // notesService.deleteNoteListing(notesId)
-        // this.drawNotesList()
+        const confirmed = confirm("Are you sure you want to delete this?")
+        if (!confirmed) return
+        const areYouSure = confirm("Are you Sure?")
+        if (!areYouSure) return
+        notesService.deleteNoteListing(notesId)
+        this.drawNotesList()
     }
 }
 
