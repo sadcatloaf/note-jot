@@ -4,9 +4,9 @@ export class Notes {
 
     constructor(data) {
 
-        this.id = generateId()
+        this.id = data.id || generateId()
         this.title = data.title
-        this.description = data.description
+        this.description = data.description || ''
         this.updatedAt = data.updatedAt == undefined ? new Date() : new Date(data.updatedAt)
         this.createdDate = data.createdDate == undefined ? new Date() : new Date(data.createdDate)
         this.color = data.color
@@ -33,7 +33,7 @@ export class Notes {
         return `
     <div class="m-3">
               <h2>${this.title}</h2>
-              <p>${this.ShortReportedDate}</p>
+              <p>Created on: ${this.ShortReportedDate}</p>
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
             <hr>

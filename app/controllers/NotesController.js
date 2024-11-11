@@ -59,8 +59,12 @@ export class NotesController {
 
     saveActiveNotes() {
         event.preventDefault()
-        console.log('💾📔', AppState.activeNotes);
+        console.log('💾📔');
         const formElm = event.target
+        // @ts-ignore
+        let newText = formElm.description.value
+        console.log(newText);
+        notesService.saveActiveNotes()
     }
 
     deleteNoteListing(notesId) {
