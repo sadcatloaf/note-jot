@@ -26,7 +26,7 @@ export class NotesController {
     drawActiveNotes() {
         console.log('📔📔')
         const activeNotesElm = document.getElementById('Active-Notes')
-        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
+        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotesTemplate
 
     }
 
@@ -65,7 +65,7 @@ export class NotesController {
         // @ts-ignore
         let newText = formElm.description.value
         console.log(newText);
-        notesService.saveActiveNotes()
+        notesService.saveActiveNotes(newText)
     }
 
     deleteNoteListing(notesId) {

@@ -5,12 +5,17 @@ import { loadState, saveState } from "../utils/Store.js";
 class NotesService {
 
 
-    saveActiveNotes() {
+    // this should take the newText in as a parameter
+    saveActiveNotes(newText) {
         const noteJots = AppState.activeNotes
-        noteJots.createdDate = new Date()
+        noteJots.description = newText
+        noteJots.updatedAt = new Date() // change something else
+        // change the current activeNote description to the new one
         AppState.emit('activeNotes')
         this.saveNote()
     }
+
+
     selectActiveNotes(notesId) {
         console.log('service', notesId)
         const selectedNote = AppState.noteJots.find(jot => notesId == jot.id)
