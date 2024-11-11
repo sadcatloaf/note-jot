@@ -47,6 +47,7 @@ export class NotesController {
             // @ts-ignore
             color: formElm.color.value,
 
+
         }
         console.log(formData);
         notesService.createNote(formData)

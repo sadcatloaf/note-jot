@@ -72,7 +72,7 @@
                   required>Title</textarea>
               </div>
               <div class="col-3 m-3">
-                <button class="btn btn-primary" type="submit" title="Create Note">Create +</button>
+                <button class="btn btn-primary">Create +</button>
               </div>
             </form>
           </section>
@@ -97,7 +97,7 @@
                 <span class="fw-bold m-2">${this.name}</span><span class="m-2">${this.ShortReportedDate}</span>
               </div>
               <span class="m-2">${this.description}</span>
-            </section> -->
+            </div> -->
           </section>
 
         </div>
@@ -114,17 +114,15 @@
             </div>
             <hr>
             <form>
-              <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
+              <textarea name="description" class="form-control decoration" rows="25">description</textarea>
               <button class="btn btn-success m-2">Save</button>
               <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i
                   class="mdi mdi-delete-empty"></i></button>
             </form>
-        </div> -->
-
+          </div> -->
           </section>
-        </div>
 
-      </div>
+        </div>
 
 
   </main>

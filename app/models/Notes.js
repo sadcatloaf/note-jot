@@ -2,19 +2,19 @@ import { generateId } from "../utils/GenerateId.js"
 
 export class Notes {
 
-    constructor(data) {
+  constructor(data) {
 
-        this.id = data.id || generateId()
-        this.title = data.title
-        this.description = data.description || ''
-        this.updatedAt = data.updatedAt == undefined ? new Date() : new Date(data.updatedAt)
-        this.createdDate = data.createdDate == undefined ? new Date() : new Date(data.createdDate)
-        this.color = data.color
-    }
+    this.id = data.id || generateId()
+    this.title = data.title
+    this.description = data.description || ''
+    this.updatedAt = data.updatedAt == undefined ? new Date() : new Date(data.updatedAt)
+    this.createdDate = data.createdDate == undefined ? new Date() : new Date(data.createdDate)
+    this.color = data.color
+  }
 
 
-    get NotesList() {
-        return `
+  get NotesList() {
+    return `
         <div style="background-color:${this.color};">
           <section class="row note-Decoration text-light m-3 rounded">
             <div role="button" onclick="app.NotesController.selectNote('${this.id}') "
@@ -25,13 +25,18 @@ export class Notes {
           </section>
           </div>
         `
-    }
+  }
 
 
 
-    get ActiveNotes() {
-        return `
-    <div class="m-3">
+  get ActiveNotes() {
+    return `
+    <div class="m-3">`}
+
+  get ActiveNotesTemplate() {
+    return `
+   <div class=" bg-dark rounded shadow text-light ">
+            <div class="m-3">
               <h2>${this.title}</h2>
               <p>Created on: ${this.ShortReportedDate}</p>
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
@@ -43,8 +48,9 @@ export class Notes {
               <button onclick="app.NotesController.deleteNoteListing('${this.id}')" class="btn btn-danger" title="Delete"><i
                   class="mdi mdi-delete-empty"></i></button>
             </form>
+          </div>
    `
-    }
+  }
 
 
 
@@ -53,21 +59,21 @@ export class Notes {
 
 
 
-    get LongUpdatedAt() {
-        return this.updatedAt.toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', day: 'numeric', dayPeriod: 'long', month: 'long', era: 'long' })
-    }
+  get LongUpdatedAt() {
+    return this.updatedAt.toLocaleDateString('en-us', { weekday: 'long', year: 'numeric', day: 'numeric', dayPeriod: 'long', month: 'long', era: 'long' })
+  }
 
-    get FormattedUpdatedAt() {
-        return this.updatedAt.toLocaleDateString('en-us', { hour: '2-digit', minute: '2-digit', year: '2-digit', day: '2-digit', month: '2-digit' })
-    }
+  get FormattedUpdatedAt() {
+    return this.updatedAt.toLocaleDateString('en-us', { hour: '2-digit', minute: '2-digit', year: '2-digit', day: '2-digit', month: '2-digit' })
+  }
 
-    get LongReportedDate() {
-        return this.createdDate.toLocaleDateString('en-us', { hour: '2-digit', minute: '2-digit', weekday: 'long', year: 'numeric', day: 'numeric', dayPeriod: 'long', month: 'long', era: 'long' })
-    }
+  get LongReportedDate() {
+    return this.createdDate.toLocaleDateString('en-us', { hour: '2-digit', minute: '2-digit', weekday: 'long', year: 'numeric', day: 'numeric', dayPeriod: 'long', month: 'long', era: 'long' })
+  }
 
-    get ShortReportedDate() {
-        return this.createdDate.toLocaleDateString('en-us', { year: '2-digit', day: '2-digit', month: '2-digit' })
-    }
+  get ShortReportedDate() {
+    return this.createdDate.toLocaleDateString('en-us', { year: '2-digit', day: '2-digit', month: '2-digit' })
+  }
 
 
 
