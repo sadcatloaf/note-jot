@@ -35,6 +35,12 @@ export class NotesController {
         console.log('creating notes')
         event.preventDefault()
         const formElm = event.target
+        // @ts-ignore
+        if (formElm.Title.value.length < 3) {
+            console.log('Too short')
+            return
+        }
+
         const formData = {
             // @ts-ignore
             title: formElm.Title.value,
@@ -51,14 +57,20 @@ export class NotesController {
         notesService.selectActiveNotes(notesId)
     }
 
-    saveActiveNotes() {
-        event.preventDefault()
-        console.log('💾📔', AppState.activeNotes);
-        const formElm = event.target
-        // @ts-ignore
-        let newText = formElm.description.value
-        console.log(newText);
-        notesService.selectActiveNotes()
+    // saveActiveNotes() {
+    //     event.preventDefault()
+    //     console.log('💾📔', AppState.activeNotes);
+    //     const formElm = event.target
+    // }
+
+    deleteNoteListing(notesId) {
+        console.log('delete', notesId);
+        // const confirmed = confirm("Are you sure you want to delete this?")
+        // if (!confirmed) return
+        // const areYouSure = confirm("Are you Sure?")
+        // if (!areYouSure) return
+        // notesService.deleteNoteListing(notesId)
+        // this.drawNotesList()
     }
 }
 

@@ -37,10 +37,10 @@ export class Notes {
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
             <hr>
-            <form onsubmit="app.NotesController.selectNote('${this.id}')">
+            <form style="background-color:${this.color};" onsubmit="app.NotesController.selectNote('${this.id}')">
               <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
               <button class="btn btn-success m-2">Save</button>
-              <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i
+              <button onclick="app.NotesController.deleteNoteListing('${this.id}')" class="btn btn-danger" title="Delete"><i
                   class="mdi mdi-delete-empty"></i></button>
             </form>
    `

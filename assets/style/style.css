@@ -1,5 +1,3 @@
-/* BASIC STYLES HERE */
-
 body {
     background-image: url(https://www.bing.com/th/id/OGC.dc6451bc1b9766fa0a6e8dced8fbb6e4?pid=1.7&rurl=https%3a%2f%2fbestanimations.com%2fNature%2fwinter%2fwinter-snow-nature-animated-gif-30.gif&ehk=bGHeqjLjP6NTo4QM2dwZJshTUNKfkPaManJKAM%2bAQo4%3d);
     background-position: center;
@@ -24,50 +22,3 @@ body {
     min-height: 20dvh;
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* #color-wheel {
-    width: 0;
-    height: 0;
-    border-left: 25px solid transparent;
-    border-right: 25px solid transparent;
-    border-bottom: 50px rgb(94, 48, 48);
-    position: relative;
-}
-
-#color-wheel::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 200px solid yellow;
-    transform: rotate(120deg);
-}
-
-#color-wheel::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 0;
-    border-left: 100px solid transparent;
-    border-right: 100px solid transparent;
-    border-bottom: 200px solid blue;
-    transform: rotate(240deg);
-} */

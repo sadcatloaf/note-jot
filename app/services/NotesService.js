@@ -3,12 +3,15 @@ import { Notes } from "../models/Notes.js";
 import { loadState, saveState } from "../utils/Store.js";
 
 class NotesService {
+    deleteNoteListing(carId) {
+        throw new Error("Method not implemented.");
+    }
 
     saveActiveNotes() {
         const noteJots = AppState.activeNotes
         noteJots.createdDate = new Date()
         AppState.emit('activeNotes')
-        this.saveNotes()
+        this.saveNote()
     }
     selectActiveNotes(notesId) {
         console.log('service', notesId)
@@ -20,17 +23,27 @@ class NotesService {
         console.log('service', formData)
         AppState.noteJots.push(new Notes(formData))
         console.log(AppState.noteJots);
-        this.saveNotes()
+        this.saveNote()
     }
 
 
-    saveNotes() {
+    saveNote() {
         saveState('noteJots', AppState.noteJots)
     }
 
     loadNotes() {
         console.log(loadState('noteJots', [Notes]))
         AppState.noteJots = loadState('noteJots', [Notes])
+    }
+
+
+    deleteCarListing(notesId) {
+        console.log(notesId);
+        // const NotesDelete = AppState.noteJots.find(note => note.id == notesId)
+        // console.log(NotesDelete);
+        // const indexToRemove = AppState.noteJots.indexOf(NotesDelete)
+        // AppState.noteJots.splice(indexToRemove, 1)
+        // this.saveNote()
     }
 
 }
