@@ -7,7 +7,7 @@ export class Notes {
         this.id = generateId()
         this.title = data.title
         this.description = data.description
-        this.updatedAt = data.updatedAt == undefined ? new Date() : new data(data.updatedAt)
+        this.updatedAt = data.updatedAt == undefined ? new Date() : new Date(data.updatedAt)
         this.createdDate = data.createdDate == undefined ? new Date() : new Date(data.createdDate)
         this.color = data.color
     }
@@ -15,18 +15,21 @@ export class Notes {
 
     get NotesList() {
         return `
-          <section role="button" onclick="app.NotesController.selectActiveNotes('${this.id}')" class="row note-Decoration text-light m-3 rounded">
-            <div class="selectable mb-3 d-flex">
+        <div style="background-color:${this.color};">
+          <section class="row note-Decoration text-light m-3 rounded">
+            <div role="button" onclick="app.NotesController.selectNote('${this.id}') "
+            class="selectable mb-3 d-flex">
               <span class="fw-bold m-2">${this.title}</span><span class="m-2">${this.ShortReportedDate}</span>
             </div>
             <span class="m-2">${this.description}</span>
           </section>
+          </div>
         `
     }
 
 
 
-    get ActiveNotesTemplate() {
+    get ActiveNotes() {
         return `
     <div class="m-3">
               <h2>${this.title}</h2>
@@ -34,7 +37,7 @@ export class Notes {
               <p>Last Updated: ${this.FormattedUpdatedAt}</p>
             </div>
             <hr>
-            <form onsubmit="app.NotesController.saveActiveNotes">
+            <form onsubmit="app.NotesController.selectNote('${this.id}')">
               <textarea name="description" class="form-control decoration" rows="25">${this.description}</textarea>
               <button class="btn btn-success m-2">Save</button>
               <button onclick="app.NotesController.deleteNote('${this.id}')" class="btn btn-danger" title="Delete"><i

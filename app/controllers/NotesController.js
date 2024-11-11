@@ -6,11 +6,11 @@ export class NotesController {
         console.log('this is note');
 
         this.drawNotesList()
+        // this.drawActiveNotes()
         AppState.on('noteJots', () => console.log('Notes changed'))
-        // AppState.on('activeNotes', this.drawActiveNotes)
-        AppState.on('noteJots', this.drawActiveNotes)
+        AppState.on('activeNotes', this.drawActiveNotes)
         AppState.on('noteJots', this.drawNotesList)
-        // notesService.loadNotes()
+        notesService.loadNotes()
     }
 
     drawNotesList() {
@@ -26,7 +26,7 @@ export class NotesController {
     drawActiveNotes() {
         console.log('📔📔')
         const activeNotesElm = document.getElementById('Active-Notes')
-        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotesTemplate
+        activeNotesElm.innerHTML = AppState.activeNotes.ActiveNotes
 
     }
 
@@ -37,7 +37,7 @@ export class NotesController {
         const formElm = event.target
         const formData = {
             // @ts-ignore
-            Title: formElm.Title.value,
+            title: formElm.Title.value,
             // @ts-ignore
             color: formElm.color.value,
 
@@ -46,19 +46,19 @@ export class NotesController {
         notesService.createNote(formData)
     }
 
-    // selectActiveNotes(notesId) {
-    //     console.log('📒📒', notesId)
-    //     notesService.selectActiveNotes(notesId)
-    // }
-}
+    selectNote(notesId) {
+        console.log('📒📒', notesId)
+        notesService.selectActiveNotes(notesId)
+    }
 
-// saveActiveNotes() {
-//     event.preventDefault()
-//     console.log('💾📔', AppState.activeNotes);
-//     const formElm = event.target
-//     // @ts-ignore
-//     let newText = formElm.description.value
-//     console.log(newText);
-//     notesService.saveActiveNotes()
-// }
+    saveActiveNotes() {
+        event.preventDefault()
+        console.log('💾📔', AppState.activeNotes);
+        const formElm = event.target
+        // @ts-ignore
+        let newText = formElm.description.value
+        console.log(newText);
+        notesService.selectActiveNotes()
+    }
+}
 
